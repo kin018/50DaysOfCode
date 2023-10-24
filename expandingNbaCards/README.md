@@ -1,6 +1,6 @@
 # NBA Card Animation Project
 
-This project was built using a combination of CSS, HTML, and JavaScript. Its primary purpose is to create an interactive and engaging user interface that allows an expanding animation when a card representing an NBA player or team is clicked. When active, the card displays information about the NBA team player and their team name. Conversely, if the card is not active, it is minimized to its original state.
+This project was built using a combination of CSS, HTML, and JavaScript. Its primary purpose is to create an interactive and engaging user interface that allows an expanding animation when a card representing an NBA player or team is clicked. When active, the card displays a picture about the NBA team player and their team name. Conversely, if the card is not active, it is minimized to its original state.
 
 ## Technologies Used
 
