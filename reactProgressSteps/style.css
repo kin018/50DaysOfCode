@@ -1,8 +1,20 @@
+/* Importing fonts */
 @import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
 
+/* Font face declaration */
+@font-face {
+  font-family: 'Rocher';
+  src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+}
+@font-palette-values --Purples {
+  font-family: Rocher;
+  base-palette: 6;
+}
+
+/* Global styles and variables */
 :root {
   --fill: #3498db;
-  --empty: #e0e0e0;
+  --empty: #828282;
 }
 
 * {
@@ -11,8 +23,9 @@
   padding: 0;
 }
 
+/* Body styles */
 body {
-  background-color: white;
+  background-color: rgb(228, 224, 224);
   font-family: 'Muli', sans-serif;
   display: flex;
   flex-direction: column;
@@ -22,34 +35,42 @@ body {
   overflow: hidden;
 }
 
-.container {
+/* Common styles */
+.container,
+.page-title,
+.progress-wrapper {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 2vh;
+}
+
+.page-title {
+  font-family: 'Rocher';
+  color: black;
+  font-size: 2vh;
+  margin-top: 1vh;
+  font-palette: --Purples;
 }
 
 .progress-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  height: 10vh;
 }
 
 .progress-container {
   display: flex;
   justify-content: space-between;
   position: relative;
-  margin: 30px;
-  width: 350px;
+  margin: 3vh;
+  width: 35vh;
 }
 
-.progress-container::before {
+.progress-container::before,
+.progress {
   content: '';
   background-color: var(--empty);
   position: absolute;
   top: 50%;
   left: 0%;
-  height: 4px;
+  height: 0.4vh;
   width: 100%;
   transform: translateY(-50%);
   z-index: -1;
@@ -57,13 +78,6 @@ body {
 
 .progress {
   background-color: var(--fill);
-  position: absolute;
-  top: 50%;
-  left: 0%;
-  height: 4px;
-  width: 0%;
-  transform: translateY(-50%);
-  z-index: -1;
   transition: 0.4s ease;
 }
 
@@ -71,12 +85,12 @@ body {
   background-color: #fff;
   color: #999;
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  height: 3vh;
+  width: 3vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid var(--empty);
+  border: 0.3vh solid var(--empty);
   transition: 0.4s ease;
 }
 
@@ -88,12 +102,12 @@ body {
   background-color: var(--fill);
   color: #fff;
   border: 0;
-  border-radius: 5px;
+  border-radius: 0.5vh;
   cursor: pointer;
   font-family: inherit;
-  font-size: 14px;
-  margin: 5px;
-  padding: 8px 30px;
+  font-size: 1.4vh;
+  margin: 0.5vh;
+  padding: 0.8vh 3vh;
 }
 
 .btn:active {
