@@ -4,22 +4,37 @@
   --fill: #3498db;
   --empty: #e0e0e0;
 }
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
 body {
   background-color: white;
   font-family: 'Muli', sans-serif;
   display: flex;
+  flex-direction: column; /* Change the flex direction to column */
   align-items: center;
   justify-content: center;
   height: 100vh;
   overflow: hidden;
-  margin: 0;
+}
+
+.header-container {
+  text-align: center;
+}
+
+h1.jawn {
+  color: pink;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .container {
   text-align: center;
+  margin-top: 20px;
 }
 
 .progress-container {
@@ -94,4 +109,10 @@ body {
 .btn:disabled {
   background-color: var(--empty);
   cursor: not-allowed;
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
 }

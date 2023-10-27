@@ -2,6 +2,7 @@ const progress = document.getElementById('progress');
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
 const circles = document.querySelectorAll('.circle');
+const stepDescription = document.getElementById('step-description');
 
 let currActive = 1;
 
@@ -12,6 +13,7 @@ next.addEventListener('click', () => {
   }
   update();
 });
+
 prev.addEventListener('click', () => {
   currActive--;
   if (currActive < 1) {
@@ -41,4 +43,11 @@ function update() {
     prev.disabled = false;
     next.disabled = false;
   }
+
+  // Update the step description
+  stepDescription.textContent =
+    circles[currActive - 1].getAttribute('step-step');
 }
+
+// Initial update
+update();
