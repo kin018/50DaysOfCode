@@ -7,55 +7,58 @@
     <title>React Progress Steps</title>
   </head>
   <body>
-    <div class="header-container">
-      <h1 class="jawn">Using Vite to create a React Repository</h1>
-    </div>
     <div class="container">
-      <div class="progress-container">
-        <div class="progress" id="progress"></div>
-        <div class="circle active" step-step="Step 1: 'npm create vite@latest'">
-          1
+      <div class="progress-wrapper">
+        <div class="progress-container">
+          <div class="progress" id="progress"></div>
+          <div
+            class="circle active"
+            step-step="Step 1: 'npm create vite@latest'"
+          >
+            1
+          </div>
+          <div
+            class="circle"
+            step-step="Step 2: press 'y' to proceed if you are fine installing the package"
+          >
+            2
+          </div>
+          <div class="circle" step-step="Step 3: Rename project">3</div>
+          <div
+            class="circle"
+            step-step="Step 4: Select Framework! Options include Vanilla, Vue, React, Preact, Lit, Svelte, Others"
+          >
+            4
+          </div>
+          <div
+            class="circle"
+            step-step="Step 5: Select Variant! Options include JS, TS, JS+SWC, TS+SWC"
+          >
+            5
+          </div>
+          <div class="circle" step-step="Step 6: cd into application's folder">
+            6
+          </div>
+          <div class="circle" step-step="Step 7: run 'npm install'">7</div>
+          <div
+            class="circle"
+            step-step="Step 8: Open with VsCode use 'code .' or drag and drop the folder directly into VsCode"
+          >
+            8
+          </div>
+          <div
+            class="circle"
+            step-step="Step 9: Open a terminal in VsCode and type in 'npm run dev'"
+          >
+            9
+          </div>
         </div>
-        <div
-          class="circle"
-          step-step="Step 2: press 'y' to proceed if you are fine installing the package"
-        >
-          2
-        </div>
-        <div class="circle" step-step="Step 3:Rename project ">3</div>
-        <div
-          class="circle"
-          step-step="Step 4: Select Framework! Options include Vanilla, Vue, React, Preact, Lit, Svelte, Others"
-        >
-          4
-        </div>
-        <div
-          class="circle"
-          step-step="Step 5: Select Variant! Options include JS, TS, JS+SWC, TS+SWC"
-        >
-          5
-        </div>
-
-        <div class="circle" step-step="Step 6: cd into application's folder ">
-          6
-        </div>
-        <div class="circle" step-step="Step 7: run 'npm install'">7</div>
-        <div
-          class="circle"
-          step-step="Step 8: Open with VsCode use 'code .' or drag and drop the folder directly into VsCode"
-        >
-          8
-        </div>
-        <div
-          class="circle"
-          step-step="Step 9: Open a terminal in VsCode and type in 'npm run dev' "
-        >
-          9
+        <div class="step-description" id="step-description">Step 1</div>
+        <div class="btn-container">
+          <button class="btn" id="prev" disabled>Prev</button>
+          <button class="btn" id="next">Next</button>
         </div>
       </div>
-      <div class="step-description" id="step-description">Step 1</div>
-      <button class="btn" id="prev" disabled>Prev</button>
-      <button class="btn" id="next">Next</button>
     </div>
     <script src="script.js"></script>
   </body>

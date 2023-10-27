@@ -4,22 +4,21 @@ const next = document.getElementById('next');
 const circles = document.querySelectorAll('.circle');
 const stepDescription = document.getElementById('step-description');
 
+const totalSteps = circles.length;
 let currActive = 1;
 
 next.addEventListener('click', () => {
-  currActive++;
-  if (currActive > circles.length) {
-    currActive = circles.length;
+  if (currActive < totalSteps) {
+    currActive++;
+    update();
   }
-  update();
 });
 
 prev.addEventListener('click', () => {
-  currActive--;
-  if (currActive < 1) {
-    currActive = 1;
+  if (currActive > 1) {
+    currActive--;
+    update();
   }
-  update();
 });
 
 function update() {
@@ -30,24 +29,15 @@ function update() {
       circle.classList.remove('active');
     }
   });
+
   const actives = document.querySelectorAll('.active');
+  const width = ((currActive - 1) / (totalSteps - 1)) * 100 + '%';
 
-  progress.style.width =
-    ((actives.length - 1) / (circles.length - 1)) * 100 + '%';
-
-  if (currActive === 1) {
-    prev.disabled = true;
-  } else if (currActive === circles.length) {
-    next.disabled = true;
-  } else {
-    prev.disabled = false;
-    next.disabled = false;
-  }
-
-  // Update the step description
+  progress.style.width = width;
+  prev.disabled = currActive === 1;
+  next.disabled = currActive === totalSteps;
   stepDescription.textContent =
     circles[currActive - 1].getAttribute('step-step');
 }
 
-// Initial update
 update();
